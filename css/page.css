@@ -1,4 +1,4 @@
-<style type="text/css" media="all">
+
 body
  {
  background-color: #ffffff;
@@ -61,8 +61,8 @@ body
  
  img.logo 
  {
- size: 50%;
- max-width: 50%;
+ size: 20%;
+ max-width: 20%;
  }
  img.whyme
  {
@@ -131,4 +131,3 @@ border-top:0;
  
  }
  
- </style>
