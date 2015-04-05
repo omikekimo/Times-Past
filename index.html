@@ -1,0 +1,359 @@
+<html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="og:title" content="" /> 
+<meta property="og:description" content="" /> 
+ 
+
+<meta name=”title” content=”” />
+<meta name=”description” content=” ” />
+<link rel=”image_src” href=”” / >
+<link href="jqueryui/jquery-ui.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+
+<meta property="og:image" content="" /> 
+
+<head>
+
+  <title>Times Past - History at your fingertips</title>
+  
+ <style type="text/css" media="all">
+ body
+ {
+ background-color: #ffffff;
+ margin:none;
+ padding:none;
+ }
+ 	
+ p.center 
+ {
+ text-align: center; 
+ }
+ 
+ div.center 
+ {
+ background-color:#ffffff;
+ margin-left:15%;
+ margin-right:15%;
+ margin-top:0;
+ margin-bottom:0;
+ border-top:0;
+  border-bottom:0;
+   padding:none;
+} 
+
+ iframe.youtube
+ {
+ margin: auto;
+ width:560px;
+ max-width:100%;
+ height:300px;
+ frameborder:0;
+ }
+ 
+ }
+ 
+ div.wrapper
+ {
+ width:100%
+ height:auto;
+ margin:none;
+ padding:none;
+ background: transparent;
+ }
+ 
+ div.header 
+ {
+ position:absolute;
+ display:inline;
+ top:0;
+ left:0;
+ right:0;
+ background-image:  url("images/banner.jpg");
+ background-repeat: no-repeat;
+ background-position: center; 
+ height: auto;
+ padding-left:15%;
+ padding-right:15%;
+ }
+
+ 
+ img.logo 
+ {
+ size: 50%;
+ max-width: 50%;
+ }
+ img.whyme
+ {
+  size: 50%;
+ max-width: 50%;
+ }
+ 
+ div.middle
+ {
+margin-top:10%;
+ margin-bottom:0;
+ margin-left:15%;
+ margin-right:15%;
+ background-color:#ffffff;
+ padding-left:auto;
+ padding-right:auto;
+ border-top:0;
+  border-bottom:0;
+ }
+ 
+div.titletext
+ {
+background-color:#ffffff;
+ margin-left:15%;
+ margin-right:15%;
+ margin-bottom:0;
+margin-top:0;
+border-top:0;
+  border-bottom:0;
+ }
+ 
+ div.maintext
+ {
+background-color:#ffffff;
+ margin-left:15%;
+ margin-right:15%;
+ margin-bottom:0;
+margin-top:0;
+border-top:0;
+  border-bottom:0;
+  padding: 1%;
+ }
+ 
+ div.donate
+ {
+ background-color:#ffffff;
+ margin-left:15%;
+ margin-right:15%;
+ margin-bottom:0;
+ margin-top:0;
+ border-top:0;
+  border-bottom:0;
+ 
+
+ }
+ 
+ div.footer
+ {
+ background-image:  url("images/banner.jpg");
+ background-repeat: no-repeat;
+ background-position: center; 
+ height: 416px;
+
+ padding-left:none;
+ padding-right:none;
+ 
+ }
+ 
+ </style>
+
+  </head>
+  
+<body>
+
+	<div class="header">
+		<img class="logo" src="images/logo.jpg"/>
+		<a href=""><img class="socmed" src="images/facebook.png" alt="Add Us on Facebook"/></a>
+	<a href=""><img class="socmed" src="images/googleplus.png" alt="Add Us on Google+"/></a>
+	<a href=""><img class="socmed" src="images/twitter.png" alt="Follow Us on Twitter"/></a>
+	
+	</div>
+	<br>
+	
+	<div class="center">
+<div class="wrapper">
+	<div class="pagetop">
+		<!-- Slider -->
+		<h2 class="demoHeaders">Slider</h2>
+		<div id="slider"></div>
+	</div>
+	
+	<div class="midcontainer">
+	
+		<div class="pageleft">
+		v
+		</div>	
+	
+		<div class="pagemiddle">
+		v
+		</div>	
+	
+		<div class="pageright">
+		v
+	</div>	
+	
+	</div>
+	<div class="pagefooter">
+		f
+	</div>	
+	
+	
+	
+</div>
+
+
+
+
+
+<script src="jqueryui/external/jquery/jquery.js"></script>
+<script src="jqueryui/jquery-ui.js"></script>
+<script>
+
+$( "#accordion" ).accordion();
+
+
+
+var availableTags = [
+	"ActionScript",
+	"AppleScript",
+	"Asp",
+	"BASIC",
+	"C",
+	"C++",
+	"Clojure",
+	"COBOL",
+	"ColdFusion",
+	"Erlang",
+	"Fortran",
+	"Groovy",
+	"Haskell",
+	"Java",
+	"JavaScript",
+	"Lisp",
+	"Perl",
+	"PHP",
+	"Python",
+	"Ruby",
+	"Scala",
+	"Scheme"
+];
+$( "#autocomplete" ).autocomplete({
+	source: availableTags
+});
+
+
+
+$( "#button" ).button();
+$( "#radioset" ).buttonset();
+
+
+
+$( "#tabs" ).tabs();
+
+
+
+$( "#dialog" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+// Link to open the dialog
+$( "#dialog-link" ).click(function( event ) {
+	$( "#dialog" ).dialog( "open" );
+	event.preventDefault();
+});
+
+
+
+$( "#datepicker" ).datepicker({
+	inline: true
+});
+
+
+
+$( "#slider" ).slider({
+	range: true,
+	values: [ 17, 67 ]
+});
+
+
+
+$( "#progressbar" ).progressbar({
+	value: 20
+});
+
+
+
+$( "#spinner" ).spinner();
+
+
+
+$( "#menu" ).menu();
+
+
+
+$( "#tooltip" ).tooltip();
+
+
+
+$( "#selectmenu" ).selectmenu();
+
+
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
+
+</div>
+
+	<div class="middle">
+	
+	
+	
+
+
+	<img height="1" border="0" width="1" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" alt=""></img>
+	
+	<a href="http://twitter.com/share?text=Times%20Past&url=http://www.chancepixies.com/campaign"><img src="images/pop_twitter.png"></a>
+	<a href="http://www.facebook.com/sharer.php?u=http://www.chancepixies.com/campaign/index.html"><img src="images/pop_facebook.png"></a>
+	
+	</div>
+	
+	
+
+
+	
+    <div class="center">
+<iframe class="youtube"  src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+    <div class="maintext">
+
+	
+	
+	</div>
+	
+	
+	
+	
+	<div class="footer">
+	
+	
+	</div>
+
+</body>
