@@ -1,12 +1,116 @@
+	body
+	{
+		background-color: #ffffff;
+		margin:none;
+		padding:none;
+	}
+	
+	div.wrapper
+	{
+		width:100%;
+		height:auto;
+		margin:none;
+		padding:none;
+		background: red;
+	}
+	
+	div.header
+	{
+		width:100%;
+		display:table-row;
+		
+	
 
+ top:0;
+ left:0;
+ right:0;
+ background-image:  url("images/banner.jpg");
+ background-repeat: no-repeat;
+ background-position: center; 
+ height: auto;
+ padding-left:15%;
+ padding-right:15%;
+ }
+	 div.logobox
+	{
+		width: 10em;
+		height: 10em;
+		display:table-cell;
+		
+	}
+	
+	 img.logo 
+	{
+ 
+	max-width: 100%;
+	}
+
+	 div.pagetop
+	{
+		width:90%;
+		display:table-cell;
+	}
+	
 	.demoHeaders {
 		margin-top: 2em;
 	}
+	
+	 div.center 
+ {
+ background-color:#ffffff;
+ margin-left:15%;
+ margin-right:15%;
+ margin-top:0;
+ margin-bottom:0;
+ border-top:0;
+ border-bottom:0;
+ padding:none;
+} 
+
+
+ 
+ div.middle
+ {
+margin-top:10%;
+ margin-bottom:0;
+ margin-left:15%;
+ margin-right:15%;
+ background-color:#ffffff;
+ padding-left:auto;
+ padding-right:auto;
+ border-top:0;
+  border-bottom:0;
+ }
+ 
+div.titletext
+ {
+background-color:#ffffff;
+ margin-left:15%;
+ margin-right:15%;
+ margin-bottom:0;
+margin-top:0;
+border-top:0;
+  border-bottom:0;
+ }
+ 
+ div.maintext
+ {
+background-color:#ffffff;
+ margin-left:15%;
+ margin-right:15%;
+ margin-bottom:0;
+margin-top:0;
+border-top:0;
+  border-bottom:0;
+  padding: 1%;
+ }
+	
 	#dialog-link {
 		padding: .4em 1em .4em 20px;
 		text-decoration: none;
 		position: relative;
 	}
+	
 	#dialog-link span.ui-icon {
 		margin: 0 5px 0 0;
 		position: absolute;
@@ -14,6 +118,7 @@
 		top: 50%;
 		margin-top: -8px;
 	}
+	
 	#icons {
 		margin: 0;
 		padding: 0;
@@ -26,14 +131,17 @@
 		float: left;
 		list-style: none;
 	}
+	
 	#icons span.ui-icon {
 		float: left;
 		margin: 0 4px;
 	}
+	
 	.fakewindowcontain .ui-widget-overlay {
 		position: absolute;
 	}
-	select {
+	select 
+	{
 		width: 200px;
 	}
 	
@@ -49,6 +157,7 @@
 		border: 5px solid gray;
 		margin: 0;
 	}
+	
 	div.pagemiddle {
 		display:block;
 		float: left;
@@ -57,6 +166,7 @@
 		border: 5px solid gray;
 		margin: 0;
 	}
+	
 	div.pageright {
 		display:block;
 		float: left;
@@ -64,6 +174,16 @@
 		padding: 10px;
 		border: 5px solid gray;
 		margin: 0;
+	}
+	
+	div.footer
+	{
+		background-image:  url("images/banner.jpg");
+		background-repeat: no-repeat;
+		background-position: center; 
+		height: 416px;
+		padding-left:none;
+		padding-right:none;
 	}
 	
 	div.pagefooter {
