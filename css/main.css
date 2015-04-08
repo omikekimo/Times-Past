@@ -106,6 +106,14 @@ border-top:0;
   padding: 1%;
  }
 	
+	.map {
+        height: 30em;
+        width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+     }
+	
+	
 	#dialog-link {
 		padding: .4em 1em .4em 20px;
 		text-decoration: none;

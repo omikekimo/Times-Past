@@ -1,7 +1,7 @@
 <?php
-echo "php is working"
+echo "php is working - database virtually non-existent - scripts running fine with librarys"
 ?>
-<html>
+<html lang="en">
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,15 +11,19 @@ echo "php is working"
 	<meta name="title" content="" />
 	<meta name="description" content="" />
 	<link rel="image_src" href="" / >
+	<link rel="stylesheet" href="http://openlayers.org/en/v3.4.0/css/ol.css" type="text/css">
 	<link href="jqueryui/jquery-ui.css" rel="stylesheet"/>
 	<link href="css/main.css" rel="stylesheet"/>
-
+    <script src="http://openlayers.org/en/v3.4.0/build/ol.js" type="text/javascript"></script>
+	<script src="jqueryui/external/jquery/jquery.js"></script>
+	<script src="jqueryui/jquery-ui.js"></script>
 
 
 	<title>Times Past - History at your fingertips</title>
 	
 </head>
   
+
 <body>
 <div class="wrapper">
 
@@ -71,7 +75,21 @@ echo "php is working"
     <div class="center">
 
 	</div>
-
+<div id="map" class="map"></div>
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.MapQuest({layer: 'sat'})
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.transform([37.41, 8.82], 'EPSG:4326', 'EPSG:3857'),
+          zoom: 4
+        })
+      });
+    </script>
     <div class="maintext">
 
 	
@@ -92,9 +110,7 @@ echo "php is working"
 	</div>
 </div>
 </body>
-<script src="jqueryui/external/jquery/jquery.js"></script>
-<script src="jqueryui/jquery-ui.js"></script>
-<script>
+  	<script>
 
 $( "#accordion" ).accordion();
 
@@ -211,5 +227,6 @@ $( "#dialog-link, #icons li" ).hover(
 );
 </script>
 
+  
 
 </html>
