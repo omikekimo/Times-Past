@@ -1,3 +1,6 @@
+<?php
+echo "php is working"
+?>
 <html>
 <head>
 
