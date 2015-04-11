@@ -5,16 +5,16 @@ echo "php is working - database virtually non-existent - scripts running fine wi
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta property="og:title" content="" /> 
+	<meta property="og:title" content="Times Past - History at your fingertips" /> 
 	<meta property="og:description" content="" /> 
 	<meta property="og:image" content="images/logo.jpg" /> 
-	<meta name="title" content="" />
+	<meta name="title" content="Times Past - History at your fingertips" />
 	<meta name="description" content="" />
-	<link rel="image_src" href="" / >
-	<link rel="stylesheet" href="http://openlayers.org/en/v3.4.0/css/ol.css" type="text/css">
+	<link rel="image_src" href="images/logo.jpg" / >
+	<link rel="stylesheet" href="css/ol.css" type="text/css">
 	<link href="jqueryui/jquery-ui.css" rel="stylesheet"/>
 	<link href="css/main.css" rel="stylesheet"/>
-    <script src="http://openlayers.org/en/v3.4.0/build/ol.js" type="text/javascript"></script>
+    <script src="ol.js" type="text/javascript"></script>
 	<script src="jqueryui/external/jquery/jquery.js"></script>
 	<script src="jqueryui/jquery-ui.js"></script>
 
@@ -104,8 +104,8 @@ echo "php is working - database virtually non-existent - scripts running fine wi
 			<a href=""><img class="socmed" src="images/facebook.png" alt="Add Us on Facebook"/></a>
 			<a href=""><img class="socmed" src="images/googleplus.png" alt="Add Us on Google+"/></a>
 			<a href=""><img class="socmed" src="images/twitter.png" alt="Follow Us on Twitter"/></a>
-			<a href="http://twitter.com/share?text=Times%20Past&url=https://www.facebook.com/timespastapp"> <img src="images/pop_twitter.png"></a>
-			<a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/timespastapp"><img src="images/pop_facebook.png"></a>
+			<a href="http://twitter.com/share?text=Times%20Past&url=https://www.facebook.com/timespastapp"> <img class="socshare" src="images/pop_twitter.png"></a>
+			<a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/timespastapp"><img class="socshare"src="images/pop_facebook.png"></a>
 		</div>	
 	</div>
 </div>
