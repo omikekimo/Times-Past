@@ -2,17 +2,22 @@
 // License: https://raw.githubusercontent.com/openlayers/ol3/master/LICENSE.md
 // Version: v3.4.0
 
-(function (root, factory) {
-  if (typeof define === "function" && define.amd) {
+(function (root, factory) 
+{
+  if (typeof define === "function" && define.amd) 
+  {
     define([], factory);
   } else if (typeof exports === "object") {
     module.exports = factory();
   } else {
     root.ol = factory();
   }
-}(this, function () {
+
+}(this, function () 
+{
   var OPENLAYERS = {};
-  var l,aa=aa||{},ba=this;function m(b){return void 0!==b}function t(b,c,d){b=b.split(".");d=d||ba;b[0]in d||!d.execScript||d.execScript("var "+b[0]);for(var e;b.length&&(e=b.shift());)!b.length&&m(c)?d[e]=c:d[e]?d=d[e]:d=d[e]={}}function ca(){}function da(b){b.Pa=function(){return b.xf?b.xf:b.xf=new b}}
+  var l,aa=aa||{},ba=this;function m(b){return void 0!==b}function t(b,c,d){b=b.split(".");d=d||ba;b[0]in d||!d.execScript||d.execScript("var "+b[0]);for(var e;b.length&&(e=b.shift());)!b.length&&m(c)?d[e]=c:d[e]?d=d[e]:d=d[e]={}}function ca(){}function da(b){b.Pa=function(){return b.xf?b.xf:b.xf=new b}
+  }
 function ea(b){var c=typeof b;if("object"==c)if(b){if(b instanceof Array)return"array";if(b instanceof Object)return c;var d=Object.prototype.toString.call(b);if("[object Window]"==d)return"object";if("[object Array]"==d||"number"==typeof b.length&&"undefined"!=typeof b.splice&&"undefined"!=typeof b.propertyIsEnumerable&&!b.propertyIsEnumerable("splice"))return"array";if("[object Function]"==d||"undefined"!=typeof b.call&&"undefined"!=typeof b.propertyIsEnumerable&&!b.propertyIsEnumerable("call"))return"function"}else return"null";
 else if("function"==c&&"undefined"==typeof b.call)return"object";return c}function fa(b){return null===b}function ga(b){return"array"==ea(b)}function ha(b){var c=ea(b);return"array"==c||"object"==c&&"number"==typeof b.length}function ia(b){return"string"==typeof b}function ja(b){return"number"==typeof b}function ka(b){return"function"==ea(b)}function la(b){var c=typeof b;return"object"==c&&null!=b||"function"==c}function ma(b){return b[na]||(b[na]=++oa)}
 var na="closure_uid_"+(1E9*Math.random()>>>0),oa=0;function pa(b,c,d){return b.call.apply(b.bind,arguments)}function qa(b,c,d){if(!b)throw Error();if(2<arguments.length){var e=Array.prototype.slice.call(arguments,2);return function(){var d=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(d,e);return b.apply(c,d)}}return function(){return b.apply(c,arguments)}}

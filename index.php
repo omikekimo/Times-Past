@@ -1,6 +1,32 @@
 <?php
-echo "php is working - database virtually non-existent - scripts running fine with librarys"
+echo "php is working - database non-existent - scripts running fine with librarys now localised to this server";
+echo "current focus: Set up database with one table and establish a visual rep on map using openlayers";
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$searchbox = "";
+
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=tp_data;charset=utf8", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo ": Connected successfully to database"; 
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+	
+	$searchbox = $_POST['searchbox'];
+	echo $searchbox
+	
+	
+	
 ?>
+
+
 <html lang="en">
 <head>
 
@@ -37,61 +63,124 @@ echo "php is working - database virtually non-existent - scripts running fine wi
 			<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
 				<div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 17%; width: 50%;">
 				</div>
-				<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 17%;">
+				<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" >
 				</span>
-				<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 67%;">
+				<span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" >
 				</span>
 			</div>
 		</div>
 	</div>
 	<br>
 	
-	<div class="center">
+	
 
 		<div class="midcontainer">
 	
 			<div class="pageleft">
-			v
+				<form action="" method="GET">
+					<input type="text" id="startdate" name="startdate">
+				</form>
 			</div>	
 	
 			<div class="pagemiddle">
-			v
+				<form action="index.php" method="POST">
+					<input type="text" id="searchbox" text="search" name="searchbox">
+				</form>
 			</div>	
 	
 			<div class="pageright">
-			v
+				<form action="" method="GET">
+					<input type="text" id="enddate" name="enddate">
+				</form>
 			</div>	
 		</div>
-	</div>
+	
 	
 
 
 
-	<div class="middle">
 	
-
-	</div>
 	
-    <div class="center">
-
-	</div>
+   
 <div id="map" class="map"></div>
     <script type="text/javascript">
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'sat'})
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.transform([37.41, 8.82], 'EPSG:4326', 'EPSG:3857'),
-          zoom: 4
-        })
-      });
+       // init map
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.MapQuest({layer: 'osm'}) // Street mapa -> osm
+                })
+            ],
+            // pos on map
+            view: new ol.View({
+                center: ol.proj.transform([17.813988, 43.342019], 'EPSG:4326', 'EPSG:3857'), 
+                zoom: 3
+            })
+        });
+    
+    
+    
+    
+        var vectorSource = new ol.source.Vector({
+            //create empty vector
+        });
+    
+        var markers = [];
+    
+        function AddMarkers() {
+            //create a bunch of icons and add to source vector
+            for (var i=0;i<50;i++){
+                var x= Math.random()*360-180;
+                var y= Math.random()*180-90;
+    
+                var iconFeature = new ol.Feature({
+                    geometry: new ol.geom.Point(ol.proj.transform([x,y], 'EPSG:4326',   'EPSG:3857')),
+                    name: 'Marker ' + i
+                });
+                markers[i]= ol.proj.transform([x,y], 'EPSG:4326',   'EPSG:3857');
+                vectorSource.addFeature(iconFeature);
+            }
+    
+            //create the style
+            var iconStyle = new ol.style.Style({
+                image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+                    anchor: [0.5, 46],
+                    anchorXUnits: 'fraction',
+                    anchorYUnits: 'pixels',
+                    opacity: 0.75,
+                    src: 'http://upload.wikimedia.org/wikipedia/commons/a/ab/Warning_icon.png'
+                }))
+            });
+    
+    
+    
+            //add the feature vector to the layer vector, and apply a style to whole layer
+            var vectorLayer = new ol.layer.Vector({
+                source: vectorSource,
+                style: iconStyle
+            });
+            return vectorLayer;
+        }
+        
+    
+        var layerMarkers = AddMarkers();
+
+var layerLines = new ol.layer.Vector({
+    source: new ol.source.Vector({
+        features: [new ol.Feature({
+            geometry: new ol.geom.LineString(markers, 'XY'),
+            name: 'Line'
+        })]
+    })
+});
+        map.addLayer(layerMarkers);
+        map.addLayer(layerLines);
+        console.log(layerLines.getSource());
+    
     </script>
     <div class="maintext">
-
+		
 	
 	
 	</div>
@@ -190,7 +279,7 @@ $( "#datepicker" ).datepicker({
 
 $( "#slider" ).slider({
 	range: true,
-	values: [ 17, 67 ]
+	values: [ 0, 100	]
 });
 
 
