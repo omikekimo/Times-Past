@@ -6,6 +6,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $searchbox = "";
+$overlay = array("people","places","objects");
 
 
 try {
@@ -19,8 +20,10 @@ catch(PDOException $e)
     echo "Connection failed: " . $e->getMessage();
     }
 	
-	$searchbox = $_POST['searchbox'];
-	echo $searchbox
+	$overlay["people"] = $_POST['people'] ;
+	var_dump ($overlay['people']);
+	$searchbox = $_POST['searchBoxForm'];
+	echo $searchbox;
 	
 	
 	
@@ -72,38 +75,42 @@ catch(PDOException $e)
 	</div>
 	<br>
 	
+		
 	
-
-		<div class="midcontainer">
-	
-			<div class="pageleft">
+<div class="boxer">
+	<div class="box-row">
+		<div class="box">
 				<form action="" method="GET">
 					<input type="text" id="startdate" name="startdate">
 				</form>
-			</div>	
-	
-			<div class="pagemiddle">
-				<form action="index.php" method="POST">
+		</div>
+		
+		<div class="box">
+				<form action="index.php" method="POST" name="searchBoxForm">
 					<input type="text" id="searchbox" text="search" name="searchbox">
 				</form>
-			</div>	
-	
-			<div class="pageright">
+		</div>
+		
+		<div class="box">
 				<form action="" method="GET">
 					<input type="text" id="enddate" name="enddate">
 				</form>
-			</div>	
 		</div>
+	</div>
+	<div class="box-row">
+		<div class="box">
+		<form action="index.php" method="POST" name="overlaysForm" class="overlaysform">
+			<input type="checkbox" name="people" value="people"> People<br>
+			<input type="checkbox" name="places" value="places" checked> Places<br>
+			<input type="checkbox" name="objects" value="objects"> Objects<br>
+			<input type="submit" name="submit_overlays" text="Go" onclick="submitOverlays()" />
+			<br>
+		</form>
+   </div>
+		<div class="boxmap">
+			<div id="map" class="map">
+				<script type="text/javascript">
 	
-	
-
-
-
-	
-	
-   
-<div id="map" class="map"></div>
-    <script type="text/javascript">
        // init map
         var map = new ol.Map({
             target: 'map',
@@ -178,12 +185,15 @@ var layerLines = new ol.layer.Vector({
         map.addLayer(layerLines);
         console.log(layerLines.getSource());
     
-    </script>
-    <div class="maintext">
-		
 	
-	
+			</script>
+			
+			
+			</div>
+		</div>
+		<div class="box">Lorem ipsum dolor</div>
 	</div>
+</div>
 	
 	
 	<br>
@@ -193,15 +203,24 @@ var layerLines = new ol.layer.Vector({
 			<a href=""><img class="socmed" src="images/facebook.png" alt="Add Us on Facebook"/></a>
 			<a href=""><img class="socmed" src="images/googleplus.png" alt="Add Us on Google+"/></a>
 			<a href=""><img class="socmed" src="images/twitter.png" alt="Follow Us on Twitter"/></a>
-			<a href="http://twitter.com/share?text=Times%20Past&url=https://www.facebook.com/timespastapp"> <img class="socshare" src="images/pop_twitter.png"></a>
-			<a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/timespastapp"><img class="socshare"src="images/pop_facebook.png"></a>
+			<a href="http://twitter.com/share?text=Times%20Past&url=https://www.facebook.com/timespastapp"> 	<img class="socshare" src="images/pop_twitter.png">
+			</a>
+			<a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/timespastapp">
+				<img class="socshare"src="images/pop_facebook.png">
+			</a>
 		</div>	
 	</div>
 </div>
 </body>
   	<script>
 
-$( "#accordion" ).accordion();
+
+	submitOverlays = function(){
+    document.getel["searchBoxForm"].submit();
+    document.forms["overlaysForm"].submit();
+}
+	
+	$( "#accordion" ).accordion();
 
 
 

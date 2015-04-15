@@ -1,3 +1,5 @@
+
+	
 	body
 	{
 		background-color: #ffffff;
@@ -18,16 +20,11 @@
 	div.header
 	{
 		width:100%;
-		display:table-row;
-		top:0;
-		left:0;
-		right:0;
-		background-image:  url("images/banner.jpg");
+		background-image:  url("/images/tpbanner.jpg");
 		background-repeat: no-repeat;
 		background-position: center; 
 		height: auto;
-		padding-left:15%;
-		padding-right:15%;
+		
 	}
 	
 	 div.logobox
@@ -35,56 +32,62 @@
 		width: 10em;
 		height: 10em;
 		display:table-cell;
-		
 	}
 	
-	 img.logo 
+	img.logo 
 	{
- 
 		max-width: 100%;
 	}
+		.map
+		{
+        height: 30em;
+        width: 100%;
+		padding-bottom: 2em;
+     }
 	
-	img.socshare
-	{
-		width: 4%;
-		height: 7%;
-	}
-
+	
 	 div.pagetop
 	{
 		width:90%;
 		display:table-cell;
 	}
 	
+	
+	.boxer {
+	display: table;
+	border-collapse: collapse;
+	}
+ 
+	.boxer .box-row {
+	display: table-row;
+	}
+ 
+	.boxer .box {
+	display: table-cell;
+	text-align: left;
+	vertical-align: top;
+	border: 0;
+	}
+
+	.boxer .boxmap {
+	display: table-cell;
+	text-align: left;
+	vertical-align: top;
+	border: 0;
+	width:100%;
+	}
+	img.socshare
+	{
+		width: 4%;
+		height: 7%;
+	}
+
+	
 	.demoHeaders {
 		margin-top: 2em;
 	}
 	
 
-
-
- 
- 
-
-	.map {
-        height: 30em;
-        width: 70%;
-		margin-left: 15%;
-		margin-right: 15%;
-		padding-bottom: 2em;
-     }
-	
-		div.maintext
-	{
-		background-color:#ffffff;
-		margin-left:15%;
-		margin-right:15%;
-		margin-bottom:0;
-		margin-top:0;
-		border-top:0;
-		border-bottom:0;
-		padding: 1%;
-	}
 	
 	
 	#dialog-link 
@@ -128,43 +131,12 @@
 	{
 		position: absolute;
 	}
+	
 	select 
 	{
 		width: 200px;
 	}
-	
-	div.midcontainer 
-	{
-		display: block;
-		padding: 10px;
-		border: 5px solid gray;
-		height: 10%;
-		margin: 0;
-		margin-left: 15%;
-		margin-right: 15%;
-	}
-	
-	div.pageleft 
-	{
-		
-		float: left; 
-		width: 25%;
-		
-	}
-	
-	div.pagemiddle {
-		
-		float: left;
-	    width: 40%;
-		
-	}
-	
-	div.pageright {
-		
-		float: left;
-		width: 25%;
-		
-	}
+
 	
 	div.footer
 	{
@@ -180,11 +152,11 @@
 		margin-right:15%;
 	}
 	
-	div.pagefooter {
+	div.pagefooter 
+	{
 		display:block;
 		float: bottom;
 		z-index: -1;
-		
 		padding: 10px;
 		border: 5px solid gray;
 		
